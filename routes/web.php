@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function(){
+    return "Hello World";
+});   
+
+Route::get('/laravelhelp', function () {
     return view('welcome');
 });
 
-Route::get('test', function() {
-    return 'test';
-});
