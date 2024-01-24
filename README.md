@@ -19,10 +19,16 @@ Esse projeto é um portal de noticias e informativo para a SEPE de 2024 com o in
 docker-compose up -d
 ```
 
-então use o app para executar os comando do laravel 
+então use o app para executar os comandos do laravel 
+
+```bash
+
+composer install
+``` 
 
 ```bash
 
 php artisan key:generate
 ``` 
+
 
