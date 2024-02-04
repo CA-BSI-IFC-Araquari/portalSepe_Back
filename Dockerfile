@@ -57,3 +57,7 @@ RUN sed -i -e 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highl
 WORKDIR /var/www
 
 USER $user
+
+RUN composer install
+
+RUN php artisan key:generate
