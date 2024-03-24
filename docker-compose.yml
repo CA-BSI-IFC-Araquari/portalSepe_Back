@@ -45,15 +45,16 @@ services:
             - laravel
 
     #phpmyadmin
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        restart: unless-stopped
-        environment:
-            PMA_HOST: db
-        ports:
-            - "8989:80"
-        networks:
-            - laravel
+    # Usar somente se não tiver outro gerenciador de banco de dados
+    # phpmyadmin:
+    #     image: phpmyadmin/phpmyadmin
+    #     restart: unless-stopped
+    #     environment:
+    #         PMA_HOST: db
+    #     ports:
+    #         - "8989:80"
+    #     networks:
+    #         - laravel
 
     # redis
     redis:
