@@ -38,28 +38,32 @@ services:
             MYSQL_PASSWORD: ${DB_PASSWORD:-userpass}
             MYSQL_USER: ${DB_USERNAME:-username}
         volumes:
-            - ./.docker/mysql/dbdata:/var/lib/mysql
+            - mysql_data:/var/lib/mysql
         ports:
             - "3388:3306"
         networks:
             - laravel
 
     #phpmyadmin
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        restart: unless-stopped
-        environment:
-            PMA_HOST: db
-        ports:
-            - "8989:80"
-        networks:
-            - laravel
+    # Usar somente se não tiver outro gerenciador de banco de dados
+    # phpmyadmin:
+    #     image: phpmyadmin/phpmyadmin
+    #     restart: unless-stopped
+    #     environment:
+    #         PMA_HOST: db
+    #     ports:
+    #         - "8989:80"
+    #     networks:
+    #         - laravel
 
     # redis
     redis:
         image: redis:latest
         networks:
             - laravel
+
+volumes:
+    mysql_data:
 
 networks:
     laravel:

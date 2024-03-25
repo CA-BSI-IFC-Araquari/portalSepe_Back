@@ -23,6 +23,11 @@ então use o app para executar os comandos do laravel
 
 ```bash
 
+docker-compose exec app zsh
+``` 
+
+```bash
+
 composer install
 ``` 
 
@@ -30,5 +35,3 @@ composer install
 
 php artisan key:generate
 ``` 
-
-
